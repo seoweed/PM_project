@@ -16,7 +16,6 @@ public class Dust {
     private float level;
     @CreatedDate
     private LocalDateTime time;
-    @Enumerated
-    private Status status;
+
 
 }
