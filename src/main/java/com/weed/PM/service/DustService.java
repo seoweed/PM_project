@@ -30,5 +30,4 @@ public class DustService {
         List<Dust> all = dustRepository.findAll();
         return all;
     }
-
 }

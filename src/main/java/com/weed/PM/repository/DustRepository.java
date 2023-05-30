@@ -8,6 +8,5 @@ import java.util.List;
 
 @Repository
 public interface DustRepository extends JpaRepository<Dust, Long> {
-//    float findByLevel(Dust dust);
-//    List<Float> findAllByLevel();
+
 }
