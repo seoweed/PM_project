@@ -1,0 +1,46 @@
+<!-- pastDust.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dust List</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        th, td {
+            padding: 8px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+<h1>이전 미세먼지</h1>
+
+<h2>미세먼지 목록</h2>
+<table>
+    <thead>
+    <tr>
+        <th>번호</th>
+        <th>미세먼지 농도</th>
+        <th>미세먼지 측정 시간</th>
+    </tr>
+    </thead>
+    <tbody>
+    <th:block th:each="dust, stat : ${dusts}">
+        <tr>
+            <td th:text="${stat.count}"></td>
+            <td th:text="${dust.level}"></td>
+            <td th:text="${dust.time}"></td>
+        </tr>
+    </th:block>
+    </tbody>
+</table>
+</body>
+</html>
