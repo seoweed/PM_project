@@ -5,6 +5,7 @@ import com.weed.PM.repository.DustRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
@@ -26,6 +27,12 @@ public class DustService {
         Dust dust = byId.get();
         return dust;
     }
+    // 최상위 Dust 객체 하나 가져오기
+    public Dust upperDust() {
+        Dust dust = dustRepository.findLastRow();
+        return dust;
+    }
+
     // 모든 먼지 class 검색
     public List<Dust> findAllDust() {
         List<Dust> all = dustRepository.findAll();
@@ -45,5 +52,15 @@ public class DustService {
             }
         }
         return status;
+    }
+
+    // rest 설정
+    public List<Dust> getAllDust() {
+        return dustRepository.findAll();
+    }
+
+    public Dust createDust(Dust dust) {
+        dust.setTime(LocalDateTime.now());
+        return dustRepository.save(dust);
     }
 }

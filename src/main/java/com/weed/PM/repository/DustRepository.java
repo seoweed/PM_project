@@ -8,5 +8,12 @@ import java.util.List;
 
 @Repository
 public interface DustRepository extends JpaRepository<Dust, Long> {
-
+    default Dust findLastRow() {
+        List<Dust> allDusts = findAll();
+        if (!allDusts.isEmpty()) {
+            return allDusts.get(allDusts.size() - 1);
+        } else {
+            return null;
+        }
+    }
 }

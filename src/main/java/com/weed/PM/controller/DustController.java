@@ -28,10 +28,15 @@ public class DustController {
     }
 
     @GetMapping("/current")
-    public String dustCurrent() {
+    public String dustCurrent(Model model) {
+        Dust dust = dustService.upperDust();
+        List<String> status = dustService.status();
+        int lastIdx = status.size() - 1;
+        String sss = status.get(lastIdx);
+        model.addAttribute("dust", dust);
+        model.addAttribute("sss", sss);
         return "currentDust";
     }
-
 
 
     @GetMapping("/past")
@@ -41,7 +46,11 @@ public class DustController {
         List<String> status = dustService.status();
         Collections.reverse(status);
         if (!dusts.isEmpty()) {
-            model.addAttribute("dusts", dusts);
+            int limit = 10; // 최대 개수
+            List<Dust> limitedDusts = dusts.subList(1, Math.min(limit, dusts.size()) + 1);
+//            List<String> limitedStatus = status.subList(1, Math.min(limit, status.size()) + 1);
+
+            model.addAttribute("dusts", limitedDusts);
             model.addAttribute("status", status);
         } else {
             Exception exception = new Exception("먼지 리스트가 없습니다.");

@@ -1,1 +1,59 @@
-<h2>good man</h2>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Current Dust</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        h1 {
+            color: #333;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        th, td {
+            padding: 12px 8px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        th {
+            background-color: #f2f2f2;
+            color: #333;
+        }
+
+        td {
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+<h1>Current Dust</h1>
+<table>
+    <thead>
+    <tr>
+        <th>미세먼지 농도</th>
+        <th>상태</th>
+        <th>미세먼지 측정 시간</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:if="${dust}">
+        <td th:text="${dust.level}"></td>
+        <td th:text="${sss}"></td>
+        <td th:text="${dust.time}"></td>
+    </tr>
+    <tr th:unless="${dust}">
+        <td colspan="2">데이터가 없습니다.</td>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>
