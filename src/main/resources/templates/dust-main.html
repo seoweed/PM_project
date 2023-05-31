@@ -23,17 +23,37 @@
             padding: 10px 20px;
             text-decoration: none;
             color: #333;
-            background-color: #5f9ea0; /* 변경된 색상 */
+            background-color: #5f9ea0;
             border-radius: 4px;
             transition: background-color 0.3s ease;
         }
 
         .nav-link:hover {
-            background-color: #008b8b; /* 변경된 색상 */
+            background-color: #008b8b;
         }
 
         .nav-item:not(:last-child) {
             margin-right: 10px;
+        }
+
+        .floating-button {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background-color: #007bff;
+            color: #fff;
+            font-size: 24px;
+            text-align: center;
+            line-height: 60px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+            transition: background-color 0.3s ease;
+        }
+
+        .floating-button:hover {
+            background-color: #0056b3;
         }
     </style>
 </head>
@@ -47,6 +67,7 @@
         <a class="nav-link" href="/dust/past">Past Dust Levels</a>
     </li>
 </ul>
+<a class="floating-button" href="/dust/save">+</a>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>

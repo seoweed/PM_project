@@ -71,7 +71,8 @@
     <th:block th:each="dust, stat : ${dusts}">
         <tr>
             <td th:text="${stat.count}"></td>
-            <td th:text="${dust.level}"></td>            <td th:text="${status[stat.count-1]}"></td>
+            <td th:text="${dust.level}"></td>
+            <td th:text="${status[stat.count-1]}"></td>
             <td th:text="${dust.time}"></td>
         </tr>
     </th:block>

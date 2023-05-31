@@ -2,11 +2,56 @@
 <html>
 <head>
     <title>먼지 수치 입력</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+
+        h1 {
+            color: #333;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        form {
+            width: 300px;
+            margin: 0 auto;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+
+        input[type="number"] {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        input[type="submit"] {
+            width: 100%;
+            padding: 8px;
+            background-color: #5f9ea0;
+            border: none;
+            color: #fff;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #008b8b;
+        }
+    </style>
 </head>
 <body>
 <h1>먼지 수치 입력</h1>
 <form action="/dust/save" method="POST">
-    <label for="dust-level">먼지 수치:</label>
+    <label for="dust-level">먼지 수치</label>
     <input type="number" id="dust-level" name="dustLevel" step="0.01">
     <br>
     <input type="submit" value="저장">
